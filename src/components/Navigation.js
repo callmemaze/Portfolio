@@ -6,6 +6,7 @@ import {Instagram,Facebook} from "../assets/svg/social-icons"
 import {FooterNav,FooterContent,FooterSocial} from "../styles/FooterStyle"
 import docket from "../assets/video/docket.mp4"
 import todolist from "../assets/video/todolist.mp4"
+import { isBrowser } from 'react-device-detect'
 const navRoute = [
     {id:0, title:'Todo List', path:'/todolist',video:todolist },
     {id:1, title:'docket', path:'/docket',video:docket },
@@ -92,7 +93,7 @@ const Navigation = ({toggleMenu,setToggle,onCursor}) => {
                     </FooterSocial>
                             </Flex>
                         </NavFooter>
-                        <NavVideo>
+                        {isBrowser ? <NavVideo>
                             <motion.div animate={{width:revealVideo.show ? 0 : "100%"}} className="reveal"></motion.div>
                             <div className="video">
                                 <AnimatePresence initial={false} exitBeforeEnter>
@@ -108,7 +109,8 @@ const Navigation = ({toggleMenu,setToggle,onCursor}) => {
                                     src={`${revealVideo.video}`}></motion.video>
                                 </AnimatePresence>
                             </div>
-                        </NavVideo>
+                        </NavVideo> : null}
+                        
                     </Container>
                     
                 </Nav>

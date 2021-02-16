@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { Cursor } from '../styles/GlobalStyles'
-
+import {isBrowser} from "react-device-detect"
 //Context
 import { useGlobalDispatchContext } from '../context/globalContext'
 import { useGlobalStateContext } from '../context/globalContext'
@@ -22,9 +22,10 @@ function CustomCursor({toggleMenu}) {
     }, [])
     return (
         <>
-            <Cursor 
+            {isBrowser ? <Cursor 
             className={`${!!cursorType ? "hovered": ""} ${cursorType} ${toggleMenu ? 'nav-open' : ""}`}
-            style = {{left:`${mousePos.x}px`,top:`${mousePos.y}px`}}/>
+            style = {{left:`${mousePos.x}px`,top:`${mousePos.y}px`}}/> : null}
+            
         </>
     )
 }

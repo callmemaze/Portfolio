@@ -1,11 +1,13 @@
 import { Link,BrowserRouter as Router } from 'react-router-dom'
 import React, { useState,useEffect } from 'react'
 import {motion} from "framer-motion"
+import {MobileView,BrowserView} from "react-device-detect"
 import { Container, Flex } from '../../styles/GlobalStyles'
 import {useInView} from "react-intersection-observer"
 import {useAnimation} from "framer-motion"
 import {HomeFeaturedSection,FeaturedProject,FeaturedContent,FeaturedVideo,ContainerFluid,CusFlex } from '../../styles/HomeStyles'
 import introVideo from '../../assets/video/docket.mp4'
+import docket from '../../assets/video/intro.mp4'
 const HomeFeatured = ({onCursor,setToggle,
     toggleMenu,}) => {
     const [hovered,setHover] = useState(false)
@@ -58,8 +60,9 @@ const HomeFeatured = ({onCursor,setToggle,
                         </h2>
                     </FeaturedContent>
                     <FeaturedVideo>
-                        <video loop autoPlay muted src={introVideo}>
-                        </video>
+                        <MobileView><video loop autoPlay src={introVideo}/> </MobileView> 
+                        <BrowserView><video loop autoPlay muted src={introVideo}></video>
+                        </BrowserView>
                     </FeaturedVideo>
                     
                 </Link>

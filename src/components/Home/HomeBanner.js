@@ -30,7 +30,17 @@ const HomeBanner = ({onCursor}) => {
             lastX = e.pageX - renderingElement.offsetLeft
             lastY = e.pageY - renderingElement.offsetTop
         })
+        renderingElement.addEventListener('touchmove', e => {
+            moving = true
+            lastX = e.pageX - renderingElement.offsetLeft
+            lastY = e.pageY - renderingElement.offsetTop
+        })
 
+        renderingElement.addEventListener('touchend', e => {
+            moving = false
+            lastX = e.pageX - renderingElement.offsetLeft
+            lastY = e.pageY - renderingElement.offsetTop
+        })
         renderingElement.addEventListener('mousemove', e => {
             if(moving){
                 drawingCtx.globalCompositeOperation = "source-over"

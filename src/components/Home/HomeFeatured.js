@@ -60,7 +60,7 @@ const HomeFeatured = ({onCursor,setToggle,
                         </h2>
                     </FeaturedContent>
                     <FeaturedVideo>
-                        <MobileView><video loop autoPlay src={introVideo}/> </MobileView> 
+                        <MobileView><video loop autoPlay muted playsInline src={introVideo}></video> </MobileView> 
                         <BrowserView><video loop autoPlay muted src={introVideo}></video>
                         </BrowserView>
                     </FeaturedVideo>

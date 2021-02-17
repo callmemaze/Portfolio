@@ -267,6 +267,7 @@ export const FeaturedVideo = styled.div`
        height: 150px;
     }
     video{
+        width:100%;
         @media (max-width:600px){
         height: 200px;
         }

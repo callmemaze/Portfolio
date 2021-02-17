@@ -37,8 +37,7 @@ const HomeBanner = ({onCursor}) => {
             lastY = e.pageY - renderingElement.offsetTop
         })
         renderingElement.addEventListener('touchmove', e => {
-            if (moving){
-                e.preventDefault();   
+            if (moving){  
                     let target = canvas;
         let offsetX = 0;
         let offsetY = 0;

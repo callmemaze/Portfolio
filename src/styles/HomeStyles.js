@@ -7,11 +7,19 @@ export const Banner = styled.div`
     width:100%;
     position:relative;
     margin-bottom: 296px;
+    @media (max-width:850px){
+        margin-bottom: 200px;
+    }
+    @media (max-width:500px){
+        margin-bottom: 100px;
+    }
 `
 export const Video = styled.div`
     height: 100%;
     width: 100%;
-    
+    video{
+        object-fit:cover;
+    }
 `
 export const Canvas = styled.canvas`
     position:absolute;

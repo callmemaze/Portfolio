@@ -23,6 +23,7 @@ export const FooterContent = styled.div`
     font-weight:600;
     line-height:.5rem;
     flex:1;
+    
     ${props => props.wider && css`
         flex:2;
     `}

@@ -19,7 +19,6 @@ const HomeBanner = ({onCursor}) => {
         renderingCtx.globalCompositeOperation = "source-over"
         renderingCtx.fillStyle = currentTheme === "dark" ? "#000000" : "#ffffff"
         renderingCtx.fillRect(0,0,size.width,size.height)
-
         renderingElement.addEventListener('mouseover', e => {
             moving = true
             lastX = e.pageX - renderingElement.offsetLeft
@@ -31,12 +30,40 @@ const HomeBanner = ({onCursor}) => {
             lastX = e.pageX - renderingElement.offsetLeft
             lastY = e.pageY - renderingElement.offsetTop
         })
-        renderingElement.addEventListener('touchmove', e => {
+        renderingElement.addEventListener('touchstart', e => {
             moving = true
+            renderingCtx.globalCompositeOperation = "destination-out"
             lastX = e.pageX - renderingElement.offsetLeft
             lastY = e.pageY - renderingElement.offsetTop
         })
+        renderingElement.addEventListener('touchmove', e => {
+            if (moving){
+                e.preventDefault();   
+                    let target = canvas;
+        let offsetX = 0;
+        let offsetY = 0;
+        
+        if (target.offsetParent !== undefined) {
+        while (target = target.offsetParent) {
+            offsetX += target.offsetLeft;
+            offsetY += target.offsetTop;
+        }
+        }
 
+    const x = (e.pageX || e.touches[0].clientX) - offsetX;
+    const y = (e.pageY || e.touches[0].clientY) - offsetY;
+                drawingCtx.lineJoin = "round"
+                drawingCtx.moveTo(lastX,lastY)
+                drawingCtx.lineTo(x,y)
+                drawingCtx.closePath()
+                drawingCtx.lineWidth = 120
+                drawingCtx.stroke()
+                lastX = x
+                lastY = y
+                renderingCtx.drawImage(drawingElement,0,0)
+            }
+
+        })
         renderingElement.addEventListener('touchend', e => {
             moving = false
             lastX = e.pageX - renderingElement.offsetLeft
@@ -59,7 +86,6 @@ const HomeBanner = ({onCursor}) => {
                 renderingCtx.drawImage(drawingElement,0,0)
             }
         })
-
     },[currentTheme])
 
     const parent = {

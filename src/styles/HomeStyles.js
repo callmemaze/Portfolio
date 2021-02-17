@@ -19,6 +19,7 @@ export const Video = styled.div`
     width: 100%;
     video{
         object-fit:cover;
+        height:100vh;
     }
 `
 export const Canvas = styled.canvas`

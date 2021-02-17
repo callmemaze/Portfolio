@@ -60,7 +60,12 @@ const Layout = ({ children }) => {
   }
   
   const [toggleMenu,setToggle] = useState(false)
-
+  const styles = {
+    width: '100%',
+    overflow:"hidden",
+    margin:'0',
+    padding:'0'
+  }
   return (
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : whiteTheme}>
       <GlobalStyle/> 
@@ -68,7 +73,7 @@ const Layout = ({ children }) => {
       <Header onCursor={onCursor} toggleMenu={toggleMenu} setToggle={setToggle} hamburgerPosition={hamburgerPosition}
         setHamburgerPosition={setHamburgerPosition}/>
       <Navigation toggleMenu={toggleMenu} setToggle={setToggle} onCursor={onCursor} hamburgerPosition={hamburgerPosition} setHamburgerPosition={setHamburgerPosition}/>
-      <main>{children}</main>
+      <main style={styles}>{children}</main>
       <Footer onCursor={onCursor}/>
     </ThemeProvider>      
   )

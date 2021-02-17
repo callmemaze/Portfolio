@@ -15,11 +15,11 @@ function App() {
   const [toggleMenu,setToggle] = useState(false)
   return (
     <>
-      <Layout>
-    <HomeBanner onCursor={onCursor}/>
-    <HomePageContent/>
-    <HomeFeatured onCursor={onCursor} toggleMenu={toggleMenu} setToggle={setToggle}/>
-    <HomeAbout/>
+    <Layout>
+      <HomeBanner onCursor={onCursor}/>
+        <HomePageContent/>
+        <HomeFeatured onCursor={onCursor} toggleMenu={toggleMenu} setToggle={setToggle}/>
+      <HomeAbout/>
   </Layout>
     </>
   );

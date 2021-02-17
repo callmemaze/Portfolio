@@ -11,9 +11,7 @@ export const Banner = styled.div`
 export const Video = styled.div`
     height: 100%;
     width: 100%;
-    video{
-        object-fit:cover;
-    }
+    
 `
 export const Canvas = styled.canvas`
     position:absolute;

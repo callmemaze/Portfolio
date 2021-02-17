@@ -1,4 +1,5 @@
 import React,{useEffect, useRef} from 'react'
+import {MobileView,BrowserView} from "react-device-detect"
 import { useGlobalStateContext } from '../../context/globalContext'
 import WindowSize from '../../Hooks/WindowSize'
 import { Banner, BannerTitle, Headline, Video, Canvas } from '../../styles/HomeStyles'
@@ -87,9 +88,9 @@ const HomeBanner = ({onCursor}) => {
     return (
         <Banner>
             <Video>
-                <video height="100%" width="100%" autoPlay loop muted src={introVideo}/>
-            </Video>
-            
+                <MobileView><video height="100%" width="100%" loop autoPlay muted playsInline src={introVideo}></video> </MobileView>
+                <BrowserView><video height="100%" width="100%" loop autoPlay muted src={introVideo}></video></BrowserView> 
+            </Video>             
             <Canvas width={size.width} height={size.height} ref={canvas} 
                 onMouseEnter={() => onCursor("hovered")} 
                 onMouseLeave={onCursor}

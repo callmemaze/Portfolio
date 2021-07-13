@@ -43,10 +43,12 @@ function Header({
                     <Flex spaceBetween noHeight>
                         <Logo onMouseEnter={() => onCursor("hovered")}
                             onMouseLeave={onCursor}>
-                            <Link to='/' exact>DIPESH</Link>
+                            <Link className="tag">&lt;/</Link>
+                            <Link to='/'>DIPESH</Link>
                             <span onClick={toggleTheme} onMouseEnter={() => onCursor("pointer")}
               onMouseLeave={onCursor}></span>
-                            <Link to='/' exact>S</Link>
+                            <Link to='/'>S</Link>
+                            <Link className="tag">&gt;</Link>
                         </Logo>
                         <Menu onClick={() => setToggle(!toggleMenu)}
             ref={hamburger}

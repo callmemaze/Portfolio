@@ -6,8 +6,8 @@ import { Container, Flex } from '../../styles/GlobalStyles'
 import {useInView} from "react-intersection-observer"
 import {useAnimation} from "framer-motion"
 import {HomeFeaturedSection,FeaturedProject,FeaturedContent,FeaturedVideo,ContainerFluid,CusFlex } from '../../styles/HomeStyles'
-import introVideo from '../../assets/video/docket.mp4'
-import docket from '../../assets/video/intro.mp4'
+import introVideo from '../../assets/video/intro.mp4'
+import Todo from '../../assets/video/todolist.mp4'
 const HomeFeatured = ({onCursor,setToggle,
     toggleMenu,}) => {
     const [hovered,setHover] = useState(false)
@@ -44,7 +44,7 @@ const HomeFeatured = ({onCursor,setToggle,
                             <h3>Featured Project</h3>
                         </CusFlex>
                         <h2 className="featured-title"> 
-                            Docket
+                            ToDo
                             <span className="arrow">
                             <motion.svg 
                                 animate={{x:hovered ? 40 : 0 }}
@@ -60,8 +60,8 @@ const HomeFeatured = ({onCursor,setToggle,
                         </h2>
                     </FeaturedContent>
                     <FeaturedVideo>
-                        <MobileView><video loop autoPlay muted playsInline src={introVideo}></video> </MobileView> 
-                        <BrowserView><video loop autoPlay muted src={introVideo}></video>
+                        <MobileView><video loop autoPlay muted playsInline src={Todo}></video> </MobileView> 
+                        <BrowserView><video loop autoPlay muted src={Todo}></video>
                         </BrowserView>
                     </FeaturedVideo>
                     
@@ -69,8 +69,8 @@ const HomeFeatured = ({onCursor,setToggle,
             </ContainerFluid>
             <Container>
                 <FeaturedProject>
-                    <Flex flexCenter onClick={() => setToggle(!toggleMenu)}>
-                        <button onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor}>
+                    <Flex flexCenter>
+                        <button onMouseEnter={() => onCursor("pointer")} onMouseLeave={onCursor} onClick={() => setToggle(!toggleMenu)}>
                             <span>Let my Project speak for itself</span>
                         </button>
                     </Flex>

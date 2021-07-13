@@ -61,7 +61,7 @@ const HomePageContent = () => {
             }}>
                     Hello, I'm Dipesh Shrestha— <br/>
                     I am an Undergraduate Student currently studing in Islington College
-                    where I will majored in Computing, focused on Software Engineering
+                    where I will majored in Computing, focused on Software Engineering and Machine Learning.
                     I'm passionate about improving the lives of others through coding and 
                     am constantly looking to learn new things everyday.
                     I create project and my work reflects the passion.

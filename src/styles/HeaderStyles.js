@@ -16,6 +16,11 @@ export const Logo = styled.div`
         font-weight:800;
         color:${props=>props.theme.text}
     }
+    .tag{
+        font-size:2rem;
+        color:${props=>props.theme.red};
+        padding:1px;
+    }
     span{
         width:1rem;
         height:1rem;

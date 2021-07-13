@@ -104,7 +104,7 @@ const HomeBanner = ({onCursor}) => {
             y:0,
             opacity:1,
             transition:{
-                duration:1,
+                duration:4,
                 ease: [0.6,0.05,-0.01,0.9],
             }
         }
